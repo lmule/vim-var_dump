@@ -9,7 +9,7 @@ nnoremap <buffer> <C-e> :call <SID>echo_test()<CR>
 
 function! <SID>var_dump()
 	setl iskeyword +=$,-,>,.
-    call append(line('.'),"echo jsonencode(".expand("<cword>").");exit;")
+    call append(line('.'),"var_dump(".expand("<cword>").");exit;")
     exec ":w"
 	setl iskeyword<
 endfunction
